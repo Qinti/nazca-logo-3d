@@ -1,0 +1,24 @@
+{
+  "name": "nazca-logo-3d",
+  "version": "1.0.0",
+  "description": "The ES6 library to render the nazca logo. Used in the example of `*import` feature in the main [nazca](https://github.com/Qinti/nazca) project.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Qinti/nazca-logo-3d.git"
+  },
+  "author": "Q'inti",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Qinti/nazca-logo-3d/issues"
+  },
+  "homepage": "https://github.com/Qinti/nazca-logo-3d#readme",
+  "dependencies": {
+    "@tweenjs/tween.js": "^18.6.4",
+    "three": "^0.133.1",
+    "tween.js": "^16.6.0"
+  }
+}
