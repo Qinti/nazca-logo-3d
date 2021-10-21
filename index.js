@@ -37,8 +37,8 @@ export default class NazcaLogo {
 
         let loader = new OBJLoader();
         Promise.all([
-            loader.open('./model/logo.obj'),
-            loader.open('./model/grass.obj')
+            loader.open('https://raw.githubusercontent.com/Qinti/nazca-logo-3d/main/model/logo.obj'),
+            loader.open('https://raw.githubusercontent.com/Qinti/nazca-logo-3d/main/model/grass.obj')
         ]).then(([logo, grass]) => {
             logo.material = new THREE.MeshPhongMaterial({color: 0xFFE100, flatShading: true});
             logo.position.y += 6;
