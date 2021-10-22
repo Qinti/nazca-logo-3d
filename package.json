@@ -1,6 +1,6 @@
 {
   "name": "nazca-logo-3d",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "The ES6 library to render the nazca logo. Used in the example of `*import` feature in the main [nazca](https://github.com/Qinti/nazca) project.",
   "main": "index.js",
   "scripts": {

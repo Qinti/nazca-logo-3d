@@ -36,20 +36,12 @@ export default class NazcaLogo {
         element.style = 'position: absolute;top: 50%;left: 50%;transform: translate(-50%, -50%);';
 
         let loader = new OBJLoader();
-        Promise.all([
-            loader.open('https://raw.githubusercontent.com/Qinti/nazca-logo-3d/main/model/logo.obj'),
-            loader.open('https://raw.githubusercontent.com/Qinti/nazca-logo-3d/main/model/grass.obj')
-        ]).then(([logo, grass]) => {
+        loader.open('https://raw.githubusercontent.com/Qinti/nazca-logo-3d/main/model/logo.obj').then((logo) => {
             logo.material = new THREE.MeshPhongMaterial({color: 0xFFE100, flatShading: true});
             logo.position.y += 6;
             scene.add(logo);
             logo.castShadow = true;
             logo.receiveShadow = true;
-
-            grass.material = new THREE.MeshPhongMaterial({color: 0x1A5619, flatShading: true, side: THREE.DoubleSide});
-            grass.position.y += 6;
-            scene.add(grass);
-            grass.castShadow = true;
 
             let plane = new THREE.Mesh(new THREE.PlaneGeometry(3000, 1000),
                 new THREE.MeshPhongMaterial({color: 0xFFFFFF}));
@@ -57,6 +49,13 @@ export default class NazcaLogo {
             plane.rotation.y = Math.PI;
             scene.add(plane);
             plane.receiveShadow = true;
+        });
+
+        loader.open('https://raw.githubusercontent.com/Qinti/nazca-logo-3d/main/model/grass.obj').then((grass) => {
+            grass.material = new THREE.MeshPhongMaterial({color: 0x1A5619, flatShading: true, side: THREE.DoubleSide});
+            grass.position.y += 6;
+            scene.add(grass);
+            grass.castShadow = true;
         });
 
         let data = {angle: Math.PI / 4};
